@@ -30,9 +30,4 @@ public class JobsFragment extends Fragment {
         tv.setText(text);
         return;
     }
-    // will this be seen?
-    // other thing
-    //third thing
-    //fourth thing
-    //fifth thing
 }
