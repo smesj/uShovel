@@ -8,12 +8,12 @@
     android:orientation="vertical"
     tools:context="com.example.smesj.ushovel.MainActivity">
 
-    <fragment android:name="com.example.smesj.ushovel.JobsFragment"
+    <fragment android:name="com.example.smesj.ushovel.UserFragment"
         android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        tools:layout="@layout/jobsfrag">
+        tools:layout="@layout/userfrag">
     </fragment>
 
     <android.support.design.widget.BottomNavigationView
