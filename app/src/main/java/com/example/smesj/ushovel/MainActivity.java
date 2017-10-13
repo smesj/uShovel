@@ -19,11 +19,17 @@ public class MainActivity extends AppCompatActivity {
     Fragment jobs = new JobsFragment();
     Fragment user = new UserFragment();
     Fragment jobslist = new JobListFragment();
+    Fragment splash = new SplashFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.add(R.id.content, splash);
+        transaction.commit();
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
