@@ -6,15 +6,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#51899a"
     tools:context="com.example.smesj.ushovel.MainActivity">
 
-    <fragment android:name="com.example.smesj.ushovel.JobsFragment"
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        tools:layout="@layout/jobsfrag">
-    </fragment>
+        android:layout_weight="1">
+        </FrameLayout>
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
