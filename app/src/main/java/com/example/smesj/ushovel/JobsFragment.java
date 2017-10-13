@@ -11,20 +11,15 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
-import java.util.HashMap;
+
 
 /**
  * Created by Smesj on 10/5/2017.
@@ -86,66 +81,10 @@ public class JobsFragment extends Fragment {
             }
         });
         MySingleton.getInstance(getActivity()).addToRequestque(jsonArrayRequest);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, jsonurl, (String) null, new Response.Listener<JSONObject>() {
-//                StringRequest jsonstring = new StringRequest(Request.Method.GET,jsonurl2, new Response.Listener<String>(){
-//                    @Override
-//                    public void onResponse(String response) {
-//                        tv.setText(response);
-//                    }
 
-//                    JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, jsonurl, (String)null, new Response.Listener<JSONArray>() {
-//                    @Override
-//                    public void onResponse(JSONArray response) {
-//                        //do some stuff
-//                        try {
-//                            for (int i=0; i<response.length(); i++){
-//                                JSONObject job = response.getJSONObject(i);
-//                                String location = job.getString("Location");
-//                                //System.out.println(location);
-//                                String date = job.getString("Date");
-//                                //System.out.println(date);
-//                                jobslist.add(i,location);
-//                                //list.setAdapter(adapter);
-//                            }
-//                            for (int y=0; y<jobslist.size();y++){
-//                                System.out.println(jobslist);
-//                            }
-//                        } catch (JSONException e) {
-//                            e.printStackTrace();
-//                        }
-//                    }
-//                }, new Response.ErrorListener() {
-//                    @Override
-//                    public void onErrorResponse(VolleyError error) {
-//                        Toast.makeText(getActivity(), "something went wrong",Toast.LENGTH_SHORT).show();
-//                        error.printStackTrace();
-//                    }
-//                });
-
-//                MySingleton.getInstance(getActivity()).addToRequestque(jsonObjectRequest);
-                //MySingleton.getInstance(getActivity()).addToRequestque(jsonArrayRequest);
-                refresh();
             }
         });
 
@@ -153,12 +92,4 @@ public class JobsFragment extends Fragment {
         return V;
     }
 
-    public void changeText(String text){
-        tv.setText(text);
-        return;
-    }
-
-    public void refresh(){
-        getFragmentManager().beginTransaction().detach(this).attach(this).commit();
-    }
 }
