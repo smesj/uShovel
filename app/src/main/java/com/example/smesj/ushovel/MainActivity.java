@@ -18,7 +18,16 @@ public class MainActivity extends AppCompatActivity {
     Fragment map = new MapFragment();
     Fragment jobs = new JobsFragment();
     Fragment user = new UserFragment();
+    Fragment jobslist = new JobListFragment();
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+    }
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -30,14 +39,17 @@ public class MainActivity extends AppCompatActivity {
             FragmentTransaction transaction = fragmentManager.beginTransaction();
             switch (item.getItemId()) {
                 case R.id.navigation_jobs:
-                    transaction.replace(R.id.content, jobs);
+                    transaction.addToBackStack(null);
+                    transaction.replace(R.id.content, jobslist);
                     transaction.commit();
                     return true;
                 case R.id.navigation_map:
+                    transaction.addToBackStack(null);
                     transaction.replace(R.id.content, map);
                     transaction.commit();
                     return true;
                 case R.id.navigation_user:
+                    transaction.addToBackStack(null);
                     transaction.replace(R.id.content, user);
                     transaction.commit();
                     return true;
@@ -47,13 +59,6 @@ public class MainActivity extends AppCompatActivity {
 
     };
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-    }
 
 }
